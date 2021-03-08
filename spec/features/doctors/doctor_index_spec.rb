@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "When I visit a doctor index page" do
+RSpec.describe "When I visit the doctor index page" do
   before :each do
     @doc1 = Doctor.create!(name: "Scott", years_practiced: 14, university:"UCLA")
     @doc2 = Doctor.create!(name: "Mike", years_practiced: 8, university:"Chicago College")

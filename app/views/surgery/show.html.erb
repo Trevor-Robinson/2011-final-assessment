@@ -1,0 +1,21 @@
+<h1><%= @surgery.title %></h1>
+<h3>Day Scheduled: <%= @surgery.day_of_week %></h3>
+<h3>Operating Room Number: <%= @surgery.operating_room_number %></h3>
+<h2> Assigned Doctors: </h2>
+<ul>
+  <% @doctors.each do |doctor| %>
+    <li> Name: <%= doctor.name %><br>
+    Years Practiced: <%= doctor.years_practiced %></li>
+  <% end %>
+</ul>
+<section class="most_experienced">
+  <h4> Most Experienced Doctor: </h4>
+  <p><%= @doctors.first.name %><p>
+  <p><%= @doctors.first.years_practiced %><p>
+</section>
+
+<section class="least_experienced">
+  <h4> Least Experienced Doctor: </h4>
+  <p><%= @doctors.last.name %><p>
+  <p><%= @doctors.last.years_practiced %><p>
+</section>
