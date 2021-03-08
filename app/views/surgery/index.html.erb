@@ -1,0 +1,7 @@
+<ul>
+  <% @surgeries.each do |surgery| %>
+    <li> <%= surgery.title %><br>
+    <%= surgery.day_of_week %><br>
+    <%= surgery.operating_room_number %></li>
+  <% end %>
+</ul>
