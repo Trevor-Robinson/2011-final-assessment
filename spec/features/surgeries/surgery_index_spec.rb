@@ -15,12 +15,19 @@ RSpec.describe "When I visit the surgery index page" do
 
   it "shows the attributes of all surgeries" do
     visit surgery_index_path
-    
+
     expect(page).to have_content(@surgery1.title)
     expect(page).to have_content(@surgery1.day_of_week)
     expect(page).to have_content(@surgery1.operating_room_number)
     expect(page).to have_content(@surgery2.title)
     expect(page).to have_content(@surgery2.day_of_week)
     expect(page).to have_content(@surgery2.operating_room_number)
+  end
+
+  it "shows average years experience for doctors on the surgery" do
+    visit surgery_index_path
+
+    expect(page).to have_content(@surgery1.average_years)
+    expect(page).to have_content(@surgery2.average_years)
   end
 end

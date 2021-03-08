@@ -1,7 +1,8 @@
 <ul>
   <% @surgeries.each do |surgery| %>
-    <li> <%= surgery.title %><br>
-    <%= surgery.day_of_week %><br>
-    <%= surgery.operating_room_number %></li>
+    <li> <p><%= surgery.title %></p>
+    <p><%= surgery.day_of_week %></p>
+    <p><%= surgery.operating_room_number %></p>
+    <p><%= surgery.average_years %></p></li>
   <% end %>
 </ul>

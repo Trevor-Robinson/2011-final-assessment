@@ -1,7 +1,7 @@
 <ul>
   <% @doctors.each do |doctor| %>
-    <li> <%= doctor.name %>
-    <%= doctor.years_practiced %><br>
-    <%= doctor.university %></li>
+    <li><p> <%= doctor.name %></p>
+    <p><%= doctor.years_practiced %></p>
+    <p><%= doctor.university %></p></li>
   <% end %>
 </ul>
