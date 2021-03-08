@@ -19,3 +19,8 @@
   <p><%= @doctors.last.name %><p>
   <p><%= @doctors.last.years_practiced %><p>
 </section>
+<%= form_with url: doctor_surgery_index_path(@surgery.id), method: :post do |form| %>
+  <%= form.label :doctor%>
+  <%= form.text_field :doctor %>
+  <%= form.submit "Submit" %>
+<% end %>

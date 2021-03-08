@@ -20,7 +20,7 @@ RSpec.describe "When I visit a surgery show page" do
 
   it "shows names and years years_practiced of all doctors assigned" do
     visit surgery_path(@surgery1)
-    save_and_open_page
+
     expect(page).to have_content(@doc1.name)
     expect(page).to have_content(@doc2.name)
     expect(page).to have_content(@doc3.name)
@@ -41,6 +41,19 @@ RSpec.describe "When I visit a surgery show page" do
     within(".least_experienced") do
       expect(page).to have_content(@doc2.name)
       expect(page).to have_content(@doc2.years_practiced)
+    end
+  end
+
+  it "can add a doctor to the surgery" do
+    visit surgery_path(@surgery1)
+
+    fill_in 'doctor', with: "Sector Keeper"
+    click_on 'Submit'
+
+    expect(current_path).to eq(surgery_path(@surgery1))
+    within(".most_experienced") do
+      expect(page).to have_content(@doc4.name)
+      expect(page).to have_content(@doc4.years_practiced)
     end
   end
 end
